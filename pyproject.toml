@@ -1,0 +1,21 @@
+[project]
+name = "nl2sql-mymodule"
+version = "0.1.0"
+description = "A module for the NL2SQL app"
+requires-python = ">=3.10"
+# The CONTRACT range, not the package version. A module written against API 1.0
+# keeps working across every 2.x core — that is the whole point of the split.
+dependencies = ["nl2sql-engine>=2.0,<3.0"]
+
+# This is the entire registration mechanism. `pip install` makes your page
+# appear in both apps; `pip uninstall` removes it. There is no list in the app
+# to edit — that list would be the file every student conflicted in.
+[project.entry-points."nl2sql.modules"]
+mymodule = "nl2sql_mymodule:MODULE"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
