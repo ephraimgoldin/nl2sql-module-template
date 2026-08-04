@@ -15,8 +15,27 @@ it is the instinct worth resisting, because the natural move is to open
 ```powershell
 git clone https://github.com/ephraimgoldin/nl2sql-module-template.git mymodule
 cd mymodule
-pip install -e . --extra-index-url https://ephraimgoldin.github.io/nl2sql-engine/simple/
 ```
+
+Then install it **into the app's environment** — from the app folder, so the
+module lands in the same venv the app runs in:
+
+```powershell
+cd ..
+l2sql          # wherever you installed the app
+$IDX = "https://ephraimgoldin.github.io/nl2sql-engine/simple/"
+
+# If you have uv (the installer uses it when it is there):
+uv pip install -e ..\mymodule --python .venv\Scripts\python.exe --extra-index-url $IDX
+
+# If you do not:
+.\.venv\Scripts\python.exe -m pip install -e ..\mymodule --extra-index-url $IDX
+```
+
+**Why two commands.** `uv sync` builds a virtual environment with **no pip in
+it**, so `python -m pip install` there fails with *"No module named pip"*. Use
+whichever matches how the app was installed. Found by installing this template
+on a machine with uv, which is the ordinary case.
 
 `-e` is editable: change the code, refresh the browser, see it. No reinstall.
 
