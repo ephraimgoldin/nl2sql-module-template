@@ -36,9 +36,13 @@ def profile(ctx, table: str, limit: int = 10) -> Result:
 
 
 MODULE = Module(
-    name="eda",
-    label="🔎 Exploratory analysis",
-    description="Profile a table before trusting a query written against it.",
+    # This name identifies the module in the app. Keep it the same as the
+    # entry-point key in pyproject.toml — they were different once, and the
+    # module appeared under a name the template never mentioned.
+    name="mymodule",
+    label="🔎 My module",
+    description="Profile a table before trusting a query written against it. "
+                "Change this to whatever you need.",
     # Against API_VERSION, not the package version. This module keeps working
     # across every 2.x core, because the CONTRACT is what it depends on.
     requires_core=">=1.0,<2.0",

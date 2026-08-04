@@ -1,0 +1,2 @@
+[nl2sql.modules]
+mymodule = nl2sql_mymodule:MODULE
