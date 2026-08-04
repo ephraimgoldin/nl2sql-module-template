@@ -1,6 +1,0 @@
-Metadata-Version: 2.4
-Name: nl2sql-mymodule
-Version: 0.1.0
-Summary: A module for the NL2SQL app
-Requires-Python: >=3.10
-Requires-Dist: nl2sql-engine<3.0,>=2.0

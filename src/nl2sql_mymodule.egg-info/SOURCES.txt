@@ -1,9 +1,0 @@
-README.md
-pyproject.toml
-src/nl2sql_mymodule/__init__.py
-src/nl2sql_mymodule.egg-info/PKG-INFO
-src/nl2sql_mymodule.egg-info/SOURCES.txt
-src/nl2sql_mymodule.egg-info/dependency_links.txt
-src/nl2sql_mymodule.egg-info/entry_points.txt
-src/nl2sql_mymodule.egg-info/requires.txt
-src/nl2sql_mymodule.egg-info/top_level.txt
